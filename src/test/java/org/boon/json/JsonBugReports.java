@@ -37,6 +37,8 @@ import static org.boon.Boon.puts;
 import static org.boon.Exceptions.die;
 import static org.boon.json.JsonFactory.fromJson;
 import static org.boon.json.JsonFactory.toJson;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 public class JsonBugReports {
 
@@ -47,7 +49,7 @@ public class JsonBugReports {
         puts (map);
         puts (toJson(map));
 
-        boolean ok = toJson(map).equals("{\"empty\":\"\",\"docId\":111,\"serviceName\":\"cafe\"}") || die();
+        assertThat(fromJson(toJson(map)), is(fromJson("{\"empty\":\"\",\"docId\":111,\"serviceName\":\"cafe\"}")));
     }
 
 }

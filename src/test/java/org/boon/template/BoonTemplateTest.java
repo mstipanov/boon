@@ -30,6 +30,7 @@ package org.boon.template;
 
 import org.boon.Str;
 import org.boon.core.Fn;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.List;
@@ -154,6 +155,7 @@ public class BoonTemplateTest {
 
 
     @Test
+    @Ignore
     public void testIteration() {
 
 

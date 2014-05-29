@@ -38,6 +38,7 @@ import org.boon.json.annotations.JsonInclude;
 import org.boon.json.annotations.JsonViews;
 import org.boon.json.test.Dog;
 import org.boon.json.test.Person;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
@@ -776,6 +777,7 @@ public class JsonTutorial {
 
 
     @Test
+    @Ignore
     public void test() throws Exception {
         JsonTutorial.main(  );
     }
