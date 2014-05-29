@@ -865,6 +865,10 @@ public class Mapper {
             FieldAccess field, Collection<Value> acollectionOfValues ) {
 
         Collection collectionOfValues = acollectionOfValues;
+        if (null == collectionOfValues) {
+            field.setObject(newInstance, null);
+            return;
+        }
 
         if(field.typeEnum() == INSTANCE) {
 
@@ -891,7 +895,6 @@ public class Mapper {
             case LIST:
             case SET:
             case COLLECTION:
-
 
                 Collection<Object> newCollection = Conversions.createCollection( field.type(), collectionOfValues.size() );
 
