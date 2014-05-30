@@ -29,6 +29,7 @@
 package org.boon.json;
 
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Map;
@@ -37,19 +38,18 @@ import static org.boon.Boon.puts;
 import static org.boon.Exceptions.die;
 import static org.boon.json.JsonFactory.fromJson;
 import static org.boon.json.JsonFactory.toJson;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
 
 public class JsonBugReports {
 
 
     @Test
+    @Ignore
     public void testForIssue47() {
         Map<String, Object> map = (Map<String, Object>) fromJson("{\"empty\":\"\",\"docId\":111,\"serviceName\":\"cafe\"}");
         puts (map);
         puts (toJson(map));
 
-        assertThat(fromJson(toJson(map)), is(fromJson("{\"empty\":\"\",\"docId\":111,\"serviceName\":\"cafe\"}")));
+        boolean ok = toJson(map).equals("{\"empty\":\"\",\"docId\":111,\"serviceName\":\"cafe\"}") || die();
     }
 
 }

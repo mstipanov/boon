@@ -896,6 +896,7 @@ public class Mapper {
             case SET:
             case COLLECTION:
 
+
                 Collection<Object> newCollection = Conversions.createCollection( field.type(), collectionOfValues.size() );
 
 
