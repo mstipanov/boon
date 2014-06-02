@@ -130,8 +130,9 @@ public class JsonArrayPropertyTest {
             return typeName;
         }
 
-        public void setTypeName(String typeName) {
+        public ApiDynamicType setTypeName(String typeName) {
             this.typeName = typeName;
+            return this;
         }
 
         public String[] getDescriptions() {
